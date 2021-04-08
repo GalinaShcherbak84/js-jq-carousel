@@ -14,7 +14,17 @@ $(document).ready(function(){
         //console.log('prev');
         nextPrevSlide('prev');
     })
+    //Navigazione con keyboard
+    $(document).keydown(function(e){
+        console.log(e);
+        console.log(e.keyCode);
+        if(e.keyCode == 37){
+            nextPrevSlide('prev');
+        }else if(e.keyCode == 39){
+            nextPrevSlide('next');
+        }
 
+    })
 
 
 //End doc ready
