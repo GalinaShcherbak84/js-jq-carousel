@@ -2,6 +2,7 @@ $(document).ready(function(){
     //refs
     var nextBtn = $('.next');
     var prevBtn = $('.prev');
+    var navDots = $('.nav i');
     
     // Naviga con il mouse
     //Next
@@ -25,8 +26,10 @@ $(document).ready(function(){
         }
 
     })
-
-
+    //Dot navigation
+    navDots.click(function(){
+        nextPrevSlide($(this));
+    })
 //End doc ready
 })
 // functions
@@ -57,5 +60,11 @@ function nextPrevSlide(direction){
             activeImage.prev('img').addClass('active');
             activeCircle.prev('i').addClass('active');
         }
+    }else{
+        direction.addClass('active');
+        console.log(direction.index());
+        var pos = direction.index();
+        $('.images img').eq(pos).addClass('active');
     }
 }
+ 
